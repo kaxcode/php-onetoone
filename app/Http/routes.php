@@ -25,3 +25,9 @@ Route::get('/insert', function (){
 
     $user->address()->save($address);
 });
+
+Route::get('update', function(){
+    $address = Address::whereUserId(1)->first();
+    $address->name = "4353 Updated Ave, Lakeland, FL 12345";
+    $address->save();
+});
