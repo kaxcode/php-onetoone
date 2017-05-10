@@ -31,3 +31,9 @@ Route::get('update', function(){
     $address->name = "4353 Updated Ave, Lakeland, FL 12345";
     $address->save();
 });
+
+Route::get('/read', function(){
+    $user = User::findOrFail(1);
+
+    echo $user->address->name;
+});
